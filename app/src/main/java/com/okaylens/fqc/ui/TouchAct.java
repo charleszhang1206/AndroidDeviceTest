@@ -1,4 +1,4 @@
-package com.okaylens.fqc;
+package com.okaylens.fqc.ui;
 
 import android.app.Activity;
 

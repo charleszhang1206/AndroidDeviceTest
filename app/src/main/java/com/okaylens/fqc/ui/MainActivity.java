@@ -1,12 +1,12 @@
-package com.okaylens.fqc;
+package com.okaylens.fqc.ui;
 
 import android.app.Activity;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+
+import com.okaylens.fqc.R;
 
 public class MainActivity extends Activity implements View.OnClickListener {
     private Button my_button1 = null;

@@ -1,4 +1,4 @@
-package com.okaylens.fqc;
+package com.okaylens.fqc.ui;
 
 import android.app.Activity;
 import android.content.BroadcastReceiver;
@@ -10,6 +10,8 @@ import android.os.Build;
 import android.os.Bundle;
 import android.telephony.TelephonyManager;
 import android.widget.TextView;
+
+import com.okaylens.fqc.R;
 
 /**
  * Created by charleszhang on 2017/5/4.

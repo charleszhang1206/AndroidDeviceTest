@@ -1,4 +1,4 @@
-package com.okaylens.fqc;
+package com.okaylens.fqc.ui;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -11,6 +11,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import com.okaylens.fqc.R;
 
 import java.io.File;
 import java.io.FileNotFoundException;

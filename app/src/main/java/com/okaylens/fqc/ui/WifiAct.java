@@ -1,10 +1,12 @@
-package com.okaylens.fqc;
+package com.okaylens.fqc.ui;
 
 import android.app.Activity;
 import android.content.Context;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.widget.TextView;
+
+import com.okaylens.fqc.R;
 
 /**
  * Created by charleszhang on 2017/5/4.

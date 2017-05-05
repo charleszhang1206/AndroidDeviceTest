@@ -16,23 +16,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".ui.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AutoAct"/>
-        <activity android:name=".BluetoothAct"/>
-        <activity android:name=".CameraAct"/>
-        <activity android:name=".DevicesInfoAct"/>
-        <activity android:name=".FirmwareAct"/>
-        <activity android:name=".GpsAct"/>
-        <activity android:name=".MicphoneAct"/>
-        <activity android:name=".SensorsAct"/>
-        <activity android:name=".TouchAct"/>
-        <activity android:name=".WifiAct"/>
+        <activity android:name=".ui.AutoAct"/>
+        <activity android:name=".ui.BluetoothAct"/>
+        <activity android:name=".ui.CameraAct"/>
+        <activity android:name=".ui.DevicesInfoAct"/>
+        <activity android:name=".ui.FirmwareAct"/>
+        <activity android:name=".ui.GpsAct"/>
+        <activity android:name=".ui.MicphoneAct"/>
+        <activity android:name=".ui.SensorsAct"/>
+        <activity android:name=".ui.TouchAct"/>
+        <activity android:name=".ui.WifiAct"/>
     </application>
 
 </manifest>
