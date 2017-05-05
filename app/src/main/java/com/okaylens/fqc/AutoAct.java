@@ -7,4 +7,8 @@ import android.app.Activity;
  */
 
 public class AutoAct  extends Activity {
+    //add tom for test
+    private int i = 0;
+
+
 }
