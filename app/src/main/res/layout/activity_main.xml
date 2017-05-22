@@ -34,7 +34,7 @@
             android:layout_height="match_parent"
             android:layout_weight="0.25"
             android:text="Sensors"
-            android:textSize="45sp"/>
+            android:textSize="45sp" />
 
         <Button
             android:id="@+id/button4"
@@ -57,8 +57,7 @@
             android:layout_height="match_parent"
             android:layout_weight="0.25"
             android:text="Touch"
-            android:textSize="45sp"
-            />
+            android:textSize="45sp" />
 
         <Button
             android:id="@+id/button6"

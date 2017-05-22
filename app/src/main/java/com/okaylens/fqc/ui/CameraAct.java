@@ -2,6 +2,7 @@ package com.okaylens.fqc.ui;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.Environment;
@@ -24,13 +25,16 @@ import java.text.SimpleDateFormat;
  * Created by charleszhang on 2017/5/4.
  */
 
-public class CameraAct extends Activity {
+public class CameraAct extends Activity implements View.OnClickListener{
     private Button button;
-    private ImageView imageView;
+    private Button button1,button2;
+    public final static int RESULT_CAM0 = 7;
+    public final static int RESULT_CAM1 = 8;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.camera_act);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         button = (Button) findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,6 +43,10 @@ public class CameraAct extends Activity {
                 startActivityForResult(intent,1);
             }
         });
+        button1 = (Button) findViewById(R.id.button18);
+        button2= (Button) findViewById(R.id.button19);
+        button1.setOnClickListener(CameraAct.this);
+        button2.setOnClickListener(CameraAct.this);
     }
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -73,6 +81,22 @@ public class CameraAct extends Activity {
                 }
             }
             ((ImageView)findViewById(R.id.imageView)).setImageBitmap(bitmap);// 将图片显示在ImageView里  
+        }
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.button18:
+                Intent intent = new Intent();
+                setResult(RESULT_CAM0,intent);
+                finish();
+                break;
+            case R.id.button19:
+                Intent intent1 = new Intent();
+                setResult(RESULT_CAM1,intent1);
+                finish();
+                break;
         }
     }
 }

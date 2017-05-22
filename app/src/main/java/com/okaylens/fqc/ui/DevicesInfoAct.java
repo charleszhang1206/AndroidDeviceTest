@@ -5,10 +5,14 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.pm.ActivityInfo;
+import android.graphics.Color;
 import android.os.BatteryManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.telephony.TelephonyManager;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.okaylens.fqc.R;
@@ -17,45 +21,73 @@ import com.okaylens.fqc.R;
  * Created by charleszhang on 2017/5/4.
  */
 
-public class DevicesInfoAct extends Activity {
-    private TextView textView2;
+public class DevicesInfoAct extends Activity implements View.OnClickListener{
+    private TextView textView,textView1,textView2,textView3,textView4,textView5,
+                        textView6,textView7,textView8,textView9;
+    private Button button1,button2;
     private String imestring;
-    private TextView textView10;
-    private TextView textView4;
-    private TextView textView9;
     String phoneName;
     String phoneVersion;
     int phoneSDK;
-    private TextView textView;
+    public final static int RESULT_DEV0 = 1;
+    public final static int RESULT_DEV1 = 2;
+
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.devicesinfo_act);
-        //获取im号
-        TelephonyManager telephonyManager;
-        telephonyManager =(TelephonyManager)getSystemService(Context.TELEPHONY_SERVICE);
-        imestring = telephonyManager.getDeviceId();
-        textView2 = (TextView)findViewById(R.id.textView2);
-        textView2.setText(imestring);
-        //获取设备名称
-        phoneName = android.os.Build.MODEL ;
-        textView10 = (TextView)findViewById(R.id.textView4);
-        textView10.setText(phoneName);
-        //获取SDK版本
-        phoneSDK = Build.VERSION.SDK_INT ;
-        textView9 = (TextView)findViewById(R.id.textView6);
-        textView9.setText(Integer.toString(phoneSDK));
-        //获取系统版本号
-        phoneVersion = android.os.Build.VERSION.RELEASE ;
-        textView4 = (TextView)findViewById(R.id.textView8);
-        textView4.setText(phoneVersion);
-
-        textView = (TextView) findViewById(R.id.textView);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+        init();
+        getDeviceInfo();
 
         IntentFilter filter = new IntentFilter();
         filter.addAction(Intent.ACTION_BATTERY_CHANGED);
         registerReceiver(mBroadcastReceiver, filter);
     }
+
+
+
+    private void init() {
+        textView = (TextView)findViewById(R.id.textView);
+        textView1 = (TextView)findViewById(R.id.textView2);
+        textView2 = (TextView)findViewById(R.id.textView3);
+        textView3 = (TextView)findViewById(R.id.textView4);
+        textView4 = (TextView)findViewById(R.id.textView5);
+        textView5 = (TextView)findViewById(R.id.textView6);
+        textView6 = (TextView)findViewById(R.id.textView7);
+        textView7 = (TextView)findViewById(R.id.textView8);
+        textView8 = (TextView)findViewById(R.id.textView14);
+        textView8 = (TextView)findViewById(R.id.textView15);
+        textView9 = (TextView)findViewById(R.id.textView14);
+        button1 = (Button) findViewById(R.id.button14);
+        button2 = (Button) findViewById(R.id.button15);
+        button1.setOnClickListener(DevicesInfoAct.this);
+        button2.setOnClickListener(DevicesInfoAct.this);
+
+    }
+
+
+    private void getDeviceInfo() {
+        //获取im号
+        TelephonyManager telephonyManager;
+        telephonyManager =(TelephonyManager)getSystemService(Context.TELEPHONY_SERVICE);
+        imestring = telephonyManager.getDeviceId();
+        textView.setText("IMI:"+imestring);
+        textView.setBackgroundColor(Color.GREEN);
+        //获取设备名称
+        phoneName = android.os.Build.MODEL ;
+        textView1.setText("设备名称："+phoneName);
+        textView1.setBackgroundColor(Color.GREEN);
+        //获取SDK版本
+        phoneSDK = Build.VERSION.SDK_INT ;
+        textView2.setText("SDK版本："+Integer.toString(phoneSDK));
+        textView2.setBackgroundColor(Color.GREEN);
+        //获取系统版本号
+        phoneVersion = android.os.Build.VERSION.RELEASE ;
+        textView3.setText("系统版本号："+phoneVersion);
+        textView3.setBackgroundColor(Color.GREEN);
+    }
+
 
     private BroadcastReceiver mBroadcastReceiver = new BroadcastReceiver() {
 
@@ -148,7 +180,22 @@ public class DevicesInfoAct extends Activity {
                         break;
                 }
                 //显示电池信息
-                textView.setText("电池的状态：" + statusString
+                textView4.setText("电池的状态：" + statusString);
+                textView4.setBackgroundColor(Color.GREEN);
+                textView5.setText("健康值: " + healthString);
+                textView5.setBackgroundColor(Color.GREEN);
+                textView6.setText("电池剩余容量： " + level);
+                textView6.setBackgroundColor(Color.GREEN);
+                textView7.setText("充电方式: " + acString);
+                textView7.setBackgroundColor(Color.GREEN);
+                textView8.setText("电池的电压：" + voltage);
+                textView8.setBackgroundColor(Color.GREEN);
+                textView9.setText("电池的温度：" + (float) temperature * 0.1);
+                textView9.setBackgroundColor(Color.GREEN);
+                //textView10.setText( "电池的类型：" + technology);
+                //textView10.setBackgroundColor(Color.GREEN);
+
+                /*textView.setText("电池的状态：" + statusString
                         + "\n健康值: " + healthString
                         + "\n电池剩余容量： " + level
                         //+ "\n电池的最大值：" + scale
@@ -158,6 +205,7 @@ public class DevicesInfoAct extends Activity {
                         + "\n电池的电压：" + voltage
                         + "\n电池的温度：" + (float) temperature * 0.1
                         + "\n电池的类型：" + technology);
+                        */
             }
         }
 
@@ -168,4 +216,19 @@ public class DevicesInfoAct extends Activity {
         unregisterReceiver(mBroadcastReceiver);
     }
 
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.button14:
+                Intent intent = new Intent();
+                setResult(RESULT_DEV0,intent);
+                finish();
+                break;
+            case R.id.button15:
+                Intent intent1 = new Intent();
+                setResult(RESULT_DEV1,intent1);
+                finish();
+                break;
+        }
+    }
 }

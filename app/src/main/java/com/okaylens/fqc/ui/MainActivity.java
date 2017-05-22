@@ -2,8 +2,12 @@ package com.okaylens.fqc.ui;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
+import android.graphics.Color;
+import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 
 import com.okaylens.fqc.R;
@@ -19,11 +23,34 @@ public class MainActivity extends Activity implements View.OnClickListener {
     private Button my_button8 = null;
     private Button my_button9 = null;
     private Button my_button10 = null;
+    //result code
+    public final static int RESULT_DEV0 = 1;
+    public final static int RESULT_DEV1 = 2;
+    public final static int RESULT_MIC0 = 3;
+    public final static int RESULT_MIC1 = 4;
+    public final static int RESULT_SEN0 = 5;
+    public final static int RESULT_SEN1 = 6;
+    public final static int RESULT_CAM0 = 7;
+    public final static int RESULT_CAM1 = 8;
+    public final static int RESULT_TOU0 = 9;
+    public final static int RESULT_TOU1 = 10;
+    public final static int RESULT_WIFI0 = 11;
+    public final static int RESULT_WIFI1 = 12;
+    public final static int RESULT_BLUE0 = 13;
+    public final static int RESULT_BLUE1 = 14;
+    public final static int RESULT_GPS0 = 15;
+    public final static int RESULT_GPS1 = 16;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //去掉标题栏
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
+        //设置横屏
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+
         my_button1 = (Button) findViewById(R.id.button1);
         my_button1.setOnClickListener(this);
         my_button2 = (Button) findViewById(R.id.button2);
@@ -52,35 +79,35 @@ public class MainActivity extends Activity implements View.OnClickListener {
         switch (v.getId()){
             case R.id.button1:
                 intent.setClass(MainActivity.this, DevicesInfoAct.class);
-                MainActivity.this.startActivity(intent);
+                MainActivity.this.startActivityForResult(intent,1);
                 break;
             case R.id.button2:
                 intent.setClass(MainActivity.this, MicphoneAct.class);
-                MainActivity.this.startActivity(intent);
+                MainActivity.this.startActivityForResult(intent,1);
                 break;
             case R.id.button3:
                 intent.setClass(MainActivity.this, SensorsAct.class);
-                MainActivity.this.startActivity(intent);
+                MainActivity.this.startActivityForResult(intent,1);
                 break;
             case R.id.button4:
                 intent.setClass(MainActivity.this, CameraAct.class);
-                MainActivity.this.startActivity(intent);
+                MainActivity.this.startActivityForResult(intent,1);
                 break;
             case R.id.button5:
                 intent.setClass(MainActivity.this, TouchAct.class);
-                MainActivity.this.startActivity(intent);
+                MainActivity.this.startActivityForResult(intent,1);
                 break;
             case R.id.button6:
                 intent.setClass(MainActivity.this, WifiAct.class);
-                MainActivity.this.startActivity(intent);
+                MainActivity.this.startActivityForResult(intent,1);
                 break;
             case R.id.button7:
                 intent.setClass(MainActivity.this, BluetoothAct.class);
-                MainActivity.this.startActivity(intent);
+                MainActivity.this.startActivityForResult(intent,1);
                 break;
             case R.id.button8:
                 intent.setClass(MainActivity.this, GpsAct.class);
-                MainActivity.this.startActivity(intent);
+                MainActivity.this.startActivityForResult(intent,1);
                 break;
             case R.id.button9:
                 intent.setClass(MainActivity.this, FirmwareAct.class);
@@ -89,6 +116,63 @@ public class MainActivity extends Activity implements View.OnClickListener {
             case R.id.button10:
                 intent.setClass(MainActivity.this, AutoAct.class);
                 MainActivity.this.startActivity(intent);
+                break;
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        switch (resultCode){
+            case RESULT_DEV0:
+                my_button1.setBackgroundColor(Color.GREEN);
+                break;
+            case RESULT_DEV1:
+                my_button1.setBackgroundColor(Color.RED);
+                break;
+            case RESULT_MIC0:
+                my_button2.setBackgroundColor(Color.GREEN);
+                break;
+            case RESULT_MIC1:
+                my_button2.setBackgroundColor(Color.RED);
+                break;
+            case RESULT_SEN0:
+                my_button3.setBackgroundColor(Color.GREEN);
+                break;
+            case RESULT_SEN1:
+                my_button3.setBackgroundColor(Color.RED);
+                break;
+            case RESULT_CAM0:
+                my_button4.setBackgroundColor(Color.GREEN);
+                break;
+            case RESULT_CAM1:
+                my_button4.setBackgroundColor(Color.RED);
+                break;
+            case RESULT_TOU0:
+                my_button5.setBackgroundColor(Color.GREEN);
+                break;
+            case RESULT_TOU1:
+                my_button5.setBackgroundColor(Color.RED);
+                break;
+            case RESULT_WIFI0:
+                my_button6.setBackgroundColor(Color.GREEN);
+                break;
+            case RESULT_WIFI1:
+                my_button6.setBackgroundColor(Color.RED);
+                break;
+            case RESULT_BLUE0:
+                my_button7.setBackgroundColor(Color.GREEN);
+                break;
+            case RESULT_BLUE1:
+                my_button7.setBackgroundColor(Color.RED);
+                break;
+            case RESULT_GPS0:
+                my_button8.setBackgroundColor(Color.GREEN);
+                break;
+            case RESULT_GPS1:
+                my_button8.setBackgroundColor(Color.RED);
+                break;
+            default:
                 break;
         }
     }

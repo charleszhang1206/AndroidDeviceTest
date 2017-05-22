@@ -3,4 +3,13 @@
     <string name="phoneName">设备名称</string>
     <string name="phoneSdk">SDK版本号</string>
     <string name="phoneSys">系统版本号</string>
+
+    <string name="accelerometer">加速计</string>
+    <string name="gyroscope">陀螺仪</string>
+    <string name="magnetic">磁力计</string>
+    <string name="Proximity">距离</string>
+    <string name="ambientlight">环境光</string>
+
+
+
 </resources>
