@@ -9,6 +9,20 @@
     <string name="magnetic">磁力计</string>
     <string name="Proximity">距离</string>
     <string name="ambientlight">环境光</string>
+    <string name="touchevent">请点击屏幕</string>
+    <string name="speakerclick">请点击播放声音</string>
+    <string name="speakertitle">确认是否播放音乐</string>
+    <string name="openwifi">打开Wifi</string>
+    <string name="closewifi">关闭Wifi</string>
+    <string name="checkwifi">检测Wifi状态</string>
+    <string name="scanwifi">扫描附近Wifi</string>
+    <string name="openbluetooth">打开蓝牙</string>
+    <string name="closebluetooth">关闭蓝牙</string>
+    <string name="scanbluetooth">检测蓝牙设备</string>
+    <string name="socketbluetooth">发送蓝牙信息</string>
+    <string name="timer">请在10s内超过10000</string>
+
+
 
 
 

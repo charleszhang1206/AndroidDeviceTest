@@ -11,36 +11,86 @@
         android:orientation="vertical"
         android:layout_weight=".7">
 
-        <TextView
-            android:id="@+id/textView9"
+
+        <ListView
+            android:id="@+id/wifiList"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="TextView"
-            android:textSize="45sp"/>
+            android:layout_height="0dp"
+            android:layout_weight=".6" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".4"
+            android:orientation="horizontal">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                >
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".5"
+                    android:orientation="vertical">
+
+
+                    <Button
+                        android:id="@+id/btn_openwifi"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight=".1"
+                        android:text="@string/openwifi" />
+
+                    <Button
+                        android:id="@+id/btn_closewifi"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight=".1"
+                        android:text="@string/closewifi" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight=".5"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/btn_checkwifi"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight=".1"
+                        android:text="@string/checkwifi" />
+
+                    <Button
+                        android:id="@+id/btn_scan_wifi"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight=".1"
+                        android:text="@string/scanwifi" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+
+
 
     </LinearLayout>
 
-    <LinearLayout
+    <include layout="@layout/rightfunbarly"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_weight="0.3">
-
-        <Button
-            android:id="@+id/button16"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:text="successs" />
-
-        <Button
-            android:id="@+id/button17"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:text="fail" />
-
-    </LinearLayout>
+        android:layout_weight="0.3"
+        />
 
 
 

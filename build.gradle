@@ -12,12 +12,15 @@ buildscript {
     }
 }
 
+
 allprojects {
     repositories {
         jcenter()
+        maven { url 'https://maven.google.com' }//所要添加的语句
     }
 }
 
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+

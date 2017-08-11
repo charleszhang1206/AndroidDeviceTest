@@ -1,6 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="7"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/Auto_devInfo"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:text="DeviceInfo"
+        android:lines="1"
+        android:layout_weight="1"/>
+
+    <TextView
+        android:id="@+id/Auto_mic"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:text="Micphone"
+        android:lines="1"
+        android:layout_marginTop="5dp"
+        android:layout_weight="1"/>
+
+    <TextView
+        android:id="@+id/Auto_sensors"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:text="Sensors"
+        android:lines="1"
+        android:layout_marginTop="5dp"
+        android:layout_weight="1"/>
+
+    <TextView
+        android:id="@+id/Auto_camera"
+        android:layout_width="match_parent"
+        android:layout_marginTop="5dp"
+        android:layout_height="0dp"
+        android:text="CAMERA"
+        android:lines="1"
+        android:layout_weight="1"/>
+
+    <!--<TextView-->
+        <!--android:id="@+id/Auto_touch"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="0dp"-->
+        <!--android:text="TOUCH"-->
+        <!--android:lines="1"-->
+        <!--android:layout_marginTop="5dp"-->
+        <!--android:layout_weight="1"/>-->
+
+    <TextView
+        android:id="@+id/Auto_wifi"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:text="WIFI"
+        android:lines="1"
+        android:layout_marginTop="5dp"
+        android:layout_weight="1"/>
+
+    <TextView
+        android:id="@+id/Auto_blue"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:text="BlueTooth"
+        android:lines="1"
+        android:layout_marginTop="5dp"
+        android:layout_weight="1"/>
+
+    <TextView
+        android:id="@+id/Auto_gps"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:text="GPS"
+        android:lines="1"
+        android:layout_marginTop="5dp"
+        android:layout_weight="1"/>
+
+    <!--<TextView-->
+        <!--android:id="@+id/Auto_speaker"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="0dp"-->
+        <!--android:layout_weight="1"-->
+        <!--android:lines="1"-->
+        <!--android:layout_marginTop="5dp"-->
+        <!--android:text="Speaker" />-->
+
+
+    <!--<include layout="@layout/rightfunbarly"-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:layout_weight="0.3"-->
+    <!--/>-->
 
 </LinearLayout>

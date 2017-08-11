@@ -11,8 +11,9 @@ import android.view.Window;
 import android.widget.Button;
 
 import com.okaylens.fqc.R;
+import com.okaylens.fqc.base.BaseAty;
 
-public class MainActivity extends Activity implements View.OnClickListener {
+public class MainActivity extends BaseAty implements View.OnClickListener {
     private Button my_button1 = null;
     private Button my_button2 = null;
     private Button my_button3 = null;
@@ -23,6 +24,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
     private Button my_button8 = null;
     private Button my_button9 = null;
     private Button my_button10 = null;
+    private Button my_button11 = null;
+    private Button my_button12 = null;
     //result code
     public final static int RESULT_DEV0 = 1;
     public final static int RESULT_DEV1 = 2;
@@ -40,16 +43,17 @@ public class MainActivity extends Activity implements View.OnClickListener {
     public final static int RESULT_BLUE1 = 14;
     public final static int RESULT_GPS0 = 15;
     public final static int RESULT_GPS1 = 16;
+    public final static int RESULT_SPE0 = 17;
+    public final static int RESULT_SPE1 = 18;
+    public final static int RESULT_AUTO0 = 19;
+    public final static int RESULT_AUTO1 = 20;
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //去掉标题栏
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.activity_main);
-        //设置横屏
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+        initTitle(R.layout.activity_main);
 
         my_button1 = (Button) findViewById(R.id.button1);
         my_button1.setOnClickListener(this);
@@ -71,6 +75,10 @@ public class MainActivity extends Activity implements View.OnClickListener {
         my_button9.setOnClickListener(this);
         my_button10 = (Button) findViewById(R.id.button10);
         my_button10.setOnClickListener(this);
+        my_button11 = (Button) findViewById(R.id.button15);
+        my_button11.setOnClickListener(this);
+        my_button12 = (Button) findViewById(R.id.button14);
+        my_button12.setOnClickListener(this);
     }
 
 
@@ -111,11 +119,19 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 break;
             case R.id.button9:
                 intent.setClass(MainActivity.this, FirmwareAct.class);
-                MainActivity.this.startActivity(intent);
+                MainActivity.this.startActivityForResult(intent,1);
                 break;
             case R.id.button10:
                 intent.setClass(MainActivity.this, AutoAct.class);
-                MainActivity.this.startActivity(intent);
+                MainActivity.this.startActivityForResult(intent,1);
+                break;
+            case R.id.button15:
+                intent.setClass(MainActivity.this, SpeakerAct.class);
+                MainActivity.this.startActivityForResult(intent,1);
+                break;
+            case R.id.button14:
+                intent.setClass(MainActivity.this, HeadSetAct.class);
+                MainActivity.this.startActivityForResult(intent,1);
                 break;
         }
     }
@@ -132,6 +148,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 break;
             case RESULT_MIC0:
                 my_button2.setBackgroundColor(Color.GREEN);
+                my_button2.setEnabled(false);
                 break;
             case RESULT_MIC1:
                 my_button2.setBackgroundColor(Color.RED);
@@ -171,6 +188,18 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 break;
             case RESULT_GPS1:
                 my_button8.setBackgroundColor(Color.RED);
+                break;
+            case RESULT_SPE0:
+                my_button11.setBackgroundColor(Color.GREEN);
+                break;
+            case RESULT_SPE1:
+                my_button11.setBackgroundColor(Color.RED);
+                break;
+            case RESULT_AUTO0:
+                my_button1.setBackgroundColor(Color.GREEN);
+                break;
+            case RESULT_AUTO1:
+                my_button1.setBackgroundColor(Color.RED);
                 break;
             default:
                 break;

@@ -1,0 +1,14 @@
+package com.okaylens.fqc.dao.sensors;
+
+import android.arch.persistence.room.Database;
+import android.arch.persistence.room.RoomDatabase;
+
+/**
+ * Created by charleszhang on 2017/8/8.
+ */
+
+
+@Database(entities = {SensorTab.class}, version = 1, exportSchema = false)
+public abstract class SensorDB extends RoomDatabase {
+    public abstract SensorDao sensorDao();
+}

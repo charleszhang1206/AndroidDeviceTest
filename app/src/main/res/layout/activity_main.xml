@@ -18,7 +18,7 @@
             android:layout_height="match_parent"
             android:layout_weight="0.25"
             android:text="DevicesInfo"
-            android:textSize="45sp"/>
+            android:textSize="@dimen/btnTextSize"/>
 
         <Button
             android:id="@+id/button2"
@@ -26,7 +26,7 @@
             android:layout_height="match_parent"
             android:layout_weight="0.25"
             android:text="Micphone"
-            android:textSize="45sp"/>
+            android:textSize="@dimen/btnTextSize"/>
 
         <Button
             android:id="@+id/button3"
@@ -34,7 +34,7 @@
             android:layout_height="match_parent"
             android:layout_weight="0.25"
             android:text="Sensors"
-            android:textSize="45sp" />
+            android:textSize="@dimen/btnTextSize" />
 
         <Button
             android:id="@+id/button4"
@@ -42,7 +42,7 @@
             android:layout_height="match_parent"
             android:layout_weight="0.25"
             android:text="Camera"
-            android:textSize="45sp"/>
+            android:textSize="@dimen/btnTextSize"/>
     </LinearLayout>
 
     <LinearLayout
@@ -57,7 +57,7 @@
             android:layout_height="match_parent"
             android:layout_weight="0.25"
             android:text="Touch"
-            android:textSize="45sp" />
+            android:textSize="@dimen/btnTextSize" />
 
         <Button
             android:id="@+id/button6"
@@ -65,7 +65,7 @@
             android:layout_height="match_parent"
             android:layout_weight="0.25"
             android:text="Wifi"
-            android:textSize="45sp"/>
+            android:textSize="@dimen/btnTextSize"/>
 
         <Button
             android:id="@+id/button7"
@@ -73,7 +73,7 @@
             android:layout_height="match_parent"
             android:layout_weight="0.25"
             android:text="BlueTooth"
-            android:textSize="45sp"/>
+            android:textSize="@dimen/btnTextSize"/>
 
         <Button
             android:id="@+id/button8"
@@ -81,8 +81,10 @@
             android:layout_height="match_parent"
             android:layout_weight="0.25"
             android:text="GPS"
-            android:textSize="45sp"/>
+            android:textSize="@dimen/btnTextSize"/>
     </LinearLayout>
+
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -91,19 +93,39 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/button9"
+            android:id="@+id/button15"
+            style="?android:attr/buttonStyle"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="0.25"
-            android:text="firmware"
-            android:textSize="45sp"/>
+            android:text="speaker"
+            android:textSize="@dimen/btnTextSize" />
+
+        <Button
+            android:id="@+id/button14"
+            style="?android:attr/buttonStyle"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.25"
+            android:text=""
+            android:textSize="@dimen/btnTextSize" />
+
+        <Button
+            android:id="@+id/button9"
+            style="?android:attr/buttonStyle"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.25"
+            android:text=""
+            android:textSize="@dimen/btnTextSize" />
 
         <Button
             android:id="@+id/button10"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="0.75"
-            android:textSize="60sp"
+            android:layout_weight="0.25"
+            style="?android:attr/buttonStyle"
+            android:textSize="@dimen/btnTextSize"
             android:text="auto" />
 
     </LinearLayout>
